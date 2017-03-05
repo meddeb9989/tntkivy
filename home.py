@@ -147,11 +147,11 @@ class Home(FloatLayout):
             line = str(ser.readline())
             line = str(ser.readline())
             while "TEST" not in line:
-                num_carte = num_carte + line[:3] + " "
+                num_carte = num_carte + line[:3]
                 line = str(ser.readline())
             root_window = self.get_root_window()
             root_window.remove_widget(self.image)
-            self.text.text="Numéro de la carte : \n"+num_carte
+            self.text.text="Carte : "+num_carte + "\nCode Pin ?"
         except Exception as e:
             print e
             self.text.text="Can't Read to Card !!"
